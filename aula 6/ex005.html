@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+            background-color: aqua;
+            color: white;
+            font: normal 18pt Arial
+        }
+    </style>
+    <title>DOM</title>
+</head>
+<body>
+    <h1>Iniciando estudos com o <strong>DOM</strong></h1>
+    <p>Aqui vai o resultado</p>
+    <p>estudando <strong>DOM</strong> em javascript</p>
+    <div id="msg"> OPAAAAA </div>
+    <script>
+        //corpo vai receber o body
+        var corpo = window.document.body
+        //a variável 'd' recebe a parte do corpo com id 'msg'
+        var d = window.document.getElementById('msg')
+        //o background de 'd' terá a cor verde
+        d.style.background = 'green'
+        var p1 = window.document.getElementsByTagName('p')[0]
+        corpo.style.background = 'black'
+        document.write(p1.innerText)
+
+    </script>
+</body>
+</html>

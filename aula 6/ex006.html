@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eventos DOM</title>
+    <style>
+        div#area{
+            font: normal 20pt Arial;
+            background: blue;
+            color: white;
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+    <!--ações quenirão acontecer envolvendo a div -->
+    <div id="area" onclick="clique()" onmouseenter="entrar()" onmouseout="sair()">
+        Interação
+    </div>
+
+<script>
+        var a = window.document.getElementById('area')
+        //eventos (coisas que podem acontecer com a div)
+        a.addEventListener('click', clique)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+    function clique(){
+        //quando clicar, o texto interno
+        a.innerText = ('AMASSOU.')
+        //o plano de fundo muda para vermelho quando clicar com o mouse
+        a.style.background =  'red'
+        a.style.color = 'black'
+    }
+    function entrar(){
+        //o texto muda quando o mouse estiver dentro da div
+        a.innerText = ('dentro')
+    }
+    function sair(){
+        //o texto e cor voltam ao que eram antes do clique quando o mouse sair da div
+        a.innerText = 'fora'
+        a.style.background = 'green'
+        a.style.color = 'white'
+    }
+</script>
+
+</body>
+</html>

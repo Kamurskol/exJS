@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>somando valores</title>
+
+    <style>
+        body{
+            font: normal 20pt Arial;
+        }
+        input{
+            font: normal 18pt Arial;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Somando Valores</h1>
+    <!--type number: apenas números podem ser digitados-->
+    <input type="number" name="txtn1" id="txtn1">
+    <select id="operacao">
+        <option value="add">+</option>
+        <option value="sub">-</option>
+        <option value="mult">x</option>
+        <option value="div">÷</option>
+    </select>
+    <input type="number" name="txtn2" id="txtn2">
+    <!--o input passa a ser um botão que chama a função operacao()-->
+    <input type="button" value="Calcular" onclick="operacao()">
+    <!--onde será exibido o resultado da operação-->
+    <div id="res"></div>
+
+
+    <script>
+        
+        function operacao(){
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.getElementById('txtn2')
+            var res = window.document.getElementById('res')
+            var operacao = document.getElementById('operacao').value
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s 
+            if (operacao === 'add') {
+                s = n1 + n2
+            }else if(operacao === 'sub'){
+                s = n1 - n2
+            }else if(operacao === 'mult'){
+                s = n1 * n2
+            }else if(operacao === 'div'){
+                if (n2 != 0){
+                    //verifica ne n2 pode ser dividido (não é 0)
+                    s = n1 / n2
+                }else{
+                    s = 'Erro: Divisão por 0, burro'
+                }
+            }
+            res.innerHTML = `O resultado da operação é ${s}`
+        }
+        
+    </script>
+</body>
+</html>
