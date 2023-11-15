@@ -25,7 +25,7 @@ function verificar(){
         if (fsex[0].checked){
             gênero = 'um homem'
             
-            if (idade >= 0 && idade < 10){
+            if (idade >= 0 && idade <= 11){
                 //criança
                 img.setAttribute('src', 'bebe-m.jpg')
             } else if (idade < 21){
